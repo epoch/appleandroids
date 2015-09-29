@@ -32,3 +32,22 @@ for (var num = 1; num <= 100; num++) {
 // when its divisible by 3 console log fizz
 // when its divisible by 5 console log buzz
 // when both 3 and 5 console log fizzbuzz
+console.log('my fizzbuzz');
+
+var counter = 1;
+
+do {
+
+  if ((counter % 3 === 0) && (counter % 5 === 0)) {
+    console.log(counter, 'fizzbuzz');
+  } else if (counter % 3 === 0) {
+    console.log(counter, 'fizz');
+  } else if (counter % 5 === 0) {
+    console.log(counter, 'buzz');
+  } else {
+    console.log(counter);
+  }
+
+  counter = counter + 1; // counter++
+
+} while (counter <= 101);
