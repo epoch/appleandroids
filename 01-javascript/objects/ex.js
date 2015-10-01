@@ -59,6 +59,7 @@ var sharknado = {
   stars: ['sharks', 'the guy from 90210']
 }
 
+// function declaration
 function movieInfo(movie) {
   var info = '';
 
@@ -66,8 +67,16 @@ function movieInfo(movie) {
   info += ' lasts for ' + movie.duration + ' minutes.';
   info += ' stars: ' + movie.stars.join(', ');
 
+  console.log(info);
+}
 
-  debugger
+// function expression
+var filmInfo = function(movie) {
+  var info = '';
+
+  info += movie.title;
+  info += ' lasts for ' + movie.duration + ' minutes.';
+  info += ' stars: ' + movie.stars.join(', ');
 
   console.log(info);
 }
