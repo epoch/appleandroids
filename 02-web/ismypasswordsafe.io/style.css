@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+h3 {
+  color: pink;
+}
+
+.content {
+  color: plum;
+}
+
+#slogan {
+  color: tomato;
+}
+
+.secure-msg {
+  color: red;
+  border: 1px solid green;
+}
+
+h1 {
+  border: 1px solid black;
+  /* top right bottom left */
+  padding: 10px 10px 10px 10px;
+}
+
+footer h3 {
+  background-color: white;
+}
+
+input {
+  border: 1px solid pink;
+}
+
+header em {
+  color: black;
+}
+
+main * {
+  background-color: blue;
+}
+
+#hello > p {
+  background-color: red; 
+}
+
+li {
+  display: inline-block;
+  width: 80px;
+  border: 5px solid red;
+  padding: 0 10px;
+}
+
