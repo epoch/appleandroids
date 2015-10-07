@@ -1,0 +1,46 @@
+body {
+  margin: 0 auto; 
+  max-width: 900px;
+}
+
+img {
+  /*float: left;*/
+  max-width: 100%;
+}
+
+.span-1, .span-2, .span-3 {
+  min-height: 100px;
+  margin-right: 1.1111111%;  /* 10 / 900 */
+  float: left;
+  margin-bottom: 10px;
+  width: 98.88888%;
+}
+
+.span-1 {
+  background-color: mistyrose;
+  /*width: 290px;*/
+  /*width: 32.222222%; /* 290 / 900 */*/
+}
+
+.span-2 {
+  background-color: plum;
+  /*width: 590px;*/
+  /*width: 65.555555%;  590 / 900 */
+}
+
+.span-3 {
+  background-color: wheat;
+  /*width: 890px;*/
+  /*width: 98.88888%;*/
+}
+
+@media all and (min-width: 40em) {
+  
+  .span-2 {
+    width: 65.555555%;
+  }
+
+  .span-1 {
+    width: 32.222222%;
+  }
+}

@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.column {
+  height: 100px;
+  border: 1px solid black;
+  float: left;
+  width: 100%;
+}
+
+li {
+  list-style: none;  
+}
+
+/* media queries */
+
+@media all and (min-width: 40em) {
+
+  .column {
+    width: 50%;
+  }
+
+} 
+
+/* breakpoint */
+@media all and (min-width: 60em) {
+
+  .column {
+    width: 25%;
+  }
+
+  li {
+    display: inline-block;
+    width: 8em;
+  }
+}
+
+@media all and (min-width: 80em) {
+
+}
+
+
+
+
+
+
