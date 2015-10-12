@@ -1,11 +1,3 @@
-// var listItems = document.getElementsByClassName('todos')[0].getElementsByTagName('li');
-
-// _.each(listItems, function(item) {
-//   item.addEventListener('click', function() {
-//     event.target.className = 'done';
-//   });
-// });
-
 var addTodo = function() {
   // get the value
   var value = newTodoInput.value;
@@ -14,8 +6,6 @@ var addTodo = function() {
   var newListItem = document.createElement('li'); // <li></li>
   var contentNode = document.createTextNode(value); //
   newListItem.appendChild(contentNode); // <li>whatever value</li>
-
-  // newListItem.addEvent
 
   // attach back to the page inside the ul 
   todosUL.appendChild(newListItem);
