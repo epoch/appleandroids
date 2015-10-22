@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(146,107,33);
+}
+
+.container {
+  background-color: plum;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em;
+  border: 5px solid black;
+}
