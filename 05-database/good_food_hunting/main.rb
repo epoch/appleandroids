@@ -5,15 +5,19 @@ require 'pg' # to connect to postgres
 
 get '/' do
   db = PG.connect(dbname: 'goodfoodhunting')
-  rows = db.exec('select * from dishes;')
+  @dishes = db.exec('select * from dishes;')
+  db.close
 
-
-  @dish_name = rows[0]['name']
-  @dish_image_url = rows[0]['image_url']
   erb :index
 end
 
 # single dish show path
 get '/dishes/:id' do
+  db = PG.connect(dbname: 'goodfoodhunting')
+  @dishes = db.exec("select * from dishes where id = #{ params[:id] }") # [{}]
+  db.close
 
+  @dish = @dishes[0] # {}
+
+  erb :show
 end

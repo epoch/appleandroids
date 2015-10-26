@@ -1,5 +1,8 @@
 <h1>Good Food Hunting</h1>
 
-<%= @dish_name %>
+<% @dishes.each do |dish| %>
+  <a href="/dishes/<%= dish['id'] %>"><h2><%= dish['name'] %></h2></a>
 
-<img src="<%= @dish_image_url %>">
+  <img src="<%= dish['image_url'] %>">
+<% end %>
+
