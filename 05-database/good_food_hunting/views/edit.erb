@@ -1,0 +1,9 @@
+<form action="/dishes/<%= @dish['id'] %>" method="post">
+  <label for="">name</label>
+  <input type="text" name="name" value="<%= @dish['name'] %>">
+
+  <label for="">image url</label>
+  <input type="text" name="image_url" value="<%= @dish['image_url'] %>">
+
+  <button>update dish</button>
+</form>

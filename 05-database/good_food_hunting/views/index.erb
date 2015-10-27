@@ -1,5 +1,7 @@
 <h1>Good Food Hunting</h1>
 
+<a href="/dishes/new">new dish</a>
+
 <% @dishes.each do |dish| %>
   <a href="/dishes/<%= dish['id'] %>"><h2><%= dish['name'] %></h2></a>
 

@@ -2,3 +2,9 @@
 
 <h1><%= @dish['name'] %></h1>
 
+<a href="/dishes/<%= @dish['id']%>/edit">edit</a>
+
+<form action="/dishes/<%= @dish['id']%>/delete" method="post">
+  <button>delete</button>
+</form>
+
