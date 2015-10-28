@@ -5,6 +5,12 @@
   <title>Good Food Hunting</title>
 </head>
 <body>
+
+  <ul>
+    <% @dish_types.each do |dish_type| %>
+      <li><%= dish_type['name'] %></li>
+    <% end %>
+  </ul>
   
   <%= yield %>
 

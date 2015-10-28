@@ -3,16 +3,35 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pg' # to connect to postgres
 
+class Dish
+  attr_accessor :id, :name, :image_url, :dish_type_id
+
+  def initialize(id, name, image_url, dish_type_id)
+    @id = id
+    @name = name
+    @image_url = image_url
+    @dish_type_id = dish_type_id
+  end
+end
+
+before do
+  @dish_types = run_sql('select * from dish_types;')
+end
+
 get '/' do
-  db = PG.connect(dbname: 'goodfoodhunting')
-  @dishes = db.exec('select * from dishes;')
-  db.close
+  rows = run_sql('select * from dishes;')
+  @dishes = []
+  rows.each do |row|
+    new_dish = Dish.new(row['id'], row['name'],row['image_url'],row['dish_type_id'])
+    @dishes << new_dish
+  end
 
   erb :index
 end
 
 # getting the form
 get '/dishes/new' do
+
   erb :new
 end
 
@@ -40,18 +59,17 @@ get '/dishes/:id/edit' do
 end
 
 # update existing dish with specified id
-post '/dishes/:id' do
-  run_sql("UPDATE dishes SET name='#{params[:name]}', image_url='#{params[:image_url]}' where id = #{params[:id]}")
+put '/dishes/:id' do
+  run_sql("UPDATE dishes SET name='#{params[:name]}', image_url='#{params[:image_url]}', dish_type_id=#{params[:dish_type_id]} where id = #{params[:id]}")
 
   redirect to "/dishes/#{params[:id]}"
 end
 
-post '/dishes/:id/delete' do
+delete '/dishes/:id' do
   run_sql("DELETE FROM dishes where id = #{ params[:id] }")
 
   redirect to "/"  
 end
-
 
 def run_sql(sql)
   db = PG.connect(dbname: 'goodfoodhunting')
