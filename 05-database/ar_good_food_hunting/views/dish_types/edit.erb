@@ -1,0 +1,7 @@
+<form action="/dish_types/<%= @dish_type.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="">name</label>
+  <input type="text" name="name" value="<%= @dish_type.name %>">
+
+  <button>update dish type</button>
+</form>

@@ -1,0 +1,9 @@
+<h1>Dish Types</h1>
+
+<% @dish_types.each do |dish_type| %>
+  <p>
+    <a href="/dish_types/<%= dish_type.id %>"><%= dish_type.name %></a>
+  </p>
+<% end %>
+
+
