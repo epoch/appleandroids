@@ -6,10 +6,21 @@ require 'pg' # to connect to postgres
 require_relative 'db_config'
 require_relative 'models/dish'
 require_relative 'models/dish_type'
+require_relative 'models/user'
+
+enable :sessions
 
 helpers do
   def link(label, href)
     "<a href='#{ href }'>#{ label }</a>"
+  end
+
+  def current_user
+    User.find_by(id: session[:user_id])
+  end
+
+  def logged_in?
+    !!current_user
   end
 end
 
@@ -31,6 +42,8 @@ end
 
 # getting the form
 get '/dishes/new' do
+  redirect to '/login' unless logged_in?
+
   erb :'/dishes/new'
 end
 
@@ -75,6 +88,8 @@ end
 
 # list all dish_types
 get '/dish_types' do
+  redirect to '/login' unless logged_in?
+
   @dish_types = DishType.all
   erb :'/dish_types/index'
 end
@@ -97,3 +112,35 @@ put '/dish_types/:id' do
   @dish_type.save
   redirect to '/dish_types'
 end
+
+#----------------------------
+# authentication
+#----------------------------
+
+# show login form
+get '/login' do
+  erb :login
+end
+
+# creating a session
+post '/session' do
+  user = User.find_by(email: params[:email])
+
+  if user && user.authenticate(params[:password])
+    # yay
+    session[:user_id] = user.id
+    # redirect user
+    redirect to '/'
+  else
+    # nay
+    # redirect user
+    redirect to '/login'
+  end
+
+end
+
+delete '/session' do
+  session[:user_id] = nil
+  redirect to '/login'
+end
+

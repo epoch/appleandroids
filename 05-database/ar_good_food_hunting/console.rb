@@ -7,5 +7,6 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 require_relative 'db_config'
 require_relative 'models/dish'
 require_relative 'models/dish_type'
+require_relative 'models/user'
 
 binding.pry

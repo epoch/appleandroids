@@ -26,3 +26,10 @@ INSERT INTO dish_types (name) VALUES ('brunch');
 INSERT INTO dish_types (name) VALUES ('snack');
 
 ALTER TABLE dishes ADD dish_type_id INTEGER; 
+
+CREATE TABLE users
+(
+  id SERIAL4 PRIMARY KEY,
+  email VARCHAR(200),
+  password_digest VARCHAR(200)
+);
