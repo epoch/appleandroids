@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Goodfoodhunting</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<ul>
+  <li><%= link_to 'home', root_path %></li>
+  <li><%= link_to 'about', about_path %></li>
+  <li><a href="/dishes">dishes</a></li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>
