@@ -1,0 +1,13 @@
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url%>
+  </p>
+
+  <p>
+    <%= f.collection_select :dish_type_id, DishType.all, :id, :name %>    
+  </p>

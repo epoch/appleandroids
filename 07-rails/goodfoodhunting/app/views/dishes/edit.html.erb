@@ -1,14 +1,6 @@
 <%= form_for @dish do |f| %>
   
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url%>
-  </p>
+  <%= render partial: 'form', locals: { f: f } %>
 
   <button>update</button>
 

@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   # get '/' => 'pages#home'
   get '/about' => 'pages#about', as: :about
 
+  # showing the login form
+  get '/login' => 'session#new'
+  # creating the session
+  post '/login' => 'session#create'
+  # deleting the session
+  delete '/logout' => 'session#destroy'
+
   # shortcut to generate multiple routes for cruding a resources
   resources :dishes
   resources :dish_types

@@ -1,22 +1,15 @@
-<a href="/dishes/new">new dish</a>
 <%= link_to 'new dish', new_dish_path %>
 
 <% @dishes.each do |dish| %>
 
   <p>
-    <a href="/dishes/<%= dish.id %>"><%= dish.name %></a>
     <%= link_to dish.name, dish_path(dish.id) %> 
-
-
-    <a href="/dishes/<%= dish.id %>/edit">edit</a>
     <%= link_to 'edit', edit_dish_path(dish.id) %>
 
 
     <%= form_for dish, method: :delete do %>
       <button>delete</button>
     <% end %>
-
-    <%= link_to 'delete', dish_path(dish.id), method: :delete %>
 
   </p>
 
