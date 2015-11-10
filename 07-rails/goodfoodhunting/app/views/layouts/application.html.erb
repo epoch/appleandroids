@@ -8,11 +8,19 @@
 </head>
 <body>
 
+<%= session[:user_id] %>
+
+<%= form_tag '/logout', method: 'delete' do %>
+  <button>logout</button>
+<% end %>
+
 <ul>
   <li><%= link_to 'home', root_path %></li>
   <li><%= link_to 'about', about_path %></li>
   <li><a href="/dishes">dishes</a></li>
 </ul>
+
+<p><%= flash[:notice] %></p>
 
 <%= yield %>
 

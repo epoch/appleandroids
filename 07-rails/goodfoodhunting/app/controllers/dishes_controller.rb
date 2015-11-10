@@ -24,8 +24,11 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-    @dish.save
-    redirect_to '/dishes'
+    if @dish.save
+      redirect_to '/dishes', notice: 'yay new dish created'
+    else
+      render :new
+    end
   end
 
   def destroy

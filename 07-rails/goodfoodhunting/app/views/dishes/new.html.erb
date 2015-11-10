@@ -1,3 +1,5 @@
+<%= @dish.errors.messages %>
+
 <%= form_for @dish do |f| %>
   
   <%= render partial: 'form', locals: { f: f } %>
