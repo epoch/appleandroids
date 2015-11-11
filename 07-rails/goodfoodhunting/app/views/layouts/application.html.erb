@@ -14,15 +14,19 @@
   <button>logout</button>
 <% end %>
 
-<ul>
-  <li><%= link_to 'home', root_path %></li>
-  <li><%= link_to 'about', about_path %></li>
-  <li><a href="/dishes">dishes</a></li>
-</ul>
+<nav>
+  <ul>
+    <li><%= link_to 'home', root_path %></li>
+    <li><%= link_to 'about', about_path %></li>
+    <li><a href="/dishes">dishes</a></li>
+  </ul>
+</nav>
 
 <p><%= flash[:notice] %></p>
 
-<%= yield %>
+<main>
+  <%= yield %>
+</main>
 
 </body>
 </html>

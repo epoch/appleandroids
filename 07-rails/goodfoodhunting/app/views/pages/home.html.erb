@@ -1,8 +1,27 @@
-<h1>good food hunting</h1>
 
 
 <% @dishes.each do |dish| %>
 
-  <p><%= dish.name %></p>
+  <div class="ui-tile">
+    <div class="bar1 content">
+      <div class="right">14h</div>
+      <img class="avatar" src="https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97200&w=200&h=200" alt=""> DT
+    </div>
+
+    <div class="image">
+      <img src="https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97800&w=800&h=800" alt="">
+      <span class="star">&#9733;</span>
+    </div>
+
+    <header class="content">
+      <h2><%= dish.name %></h2>
+      <h4>at GA</h4>
+    </header>
+
+    <div class="content">
+      <span class="right">7</span>
+      <span>bookmark</span>
+    </div>
+  </div>
 
 <% end %>
