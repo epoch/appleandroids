@@ -11,6 +11,16 @@ Rails.application.routes.draw do
   # deleting the session
   delete '/logout' => 'session#destroy'
 
+  # you should not use a get for operations that have side effect
+  get '/like_dish' => 'pages#like_dish'
+
+  # get '/api/dishes' => 'dishes#index'
+
+  namespace :api do
+    resources :dishes, only: [:index, :create, :destroy]
+    resources :likes, only: [:create]
+  end
+
   # shortcut to generate multiple routes for cruding a resources
   resources :dishes
   resources :dish_types

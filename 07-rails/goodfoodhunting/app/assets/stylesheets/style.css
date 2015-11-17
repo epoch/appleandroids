@@ -60,6 +60,12 @@ nav li {
   display: block;
 }
 
+.delete-dish {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;  
+}
+
 @media (min-width: 36em) {
 
   main {
