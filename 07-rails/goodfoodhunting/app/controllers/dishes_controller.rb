@@ -2,6 +2,11 @@ class DishesController < ApplicationController
 
   def index
     @dishes = Dish.all
+
+    # respond_to do |format|
+    #   format.html { render :index }
+    #   format.json { render json: @dishes }
+    # end
   end
 
   def new
