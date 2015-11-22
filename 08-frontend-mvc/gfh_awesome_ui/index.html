@@ -10,28 +10,30 @@
   
   <div class="container">
     <div class="sidebar">
-      <div class="dish-list">  
+      <div class="dish-list content">  
       </div>
-      <div class="load-more">load more</div>
-    </div>
-
-    <div class="map">
+      <div class="load-more content">
+        <h1>load more</h1>
+      </div>
+    </div><div class="map">
     </div>
 
   </div>
 
   <script id="dish-box-template" type="text/x-underscore-template">
 
-    <div class="ui-box">
+      <img src="{{ image_url }}">
       <h1>{{ name }}</h1>
       <p>{{ lat }}</p>
-    </div>
+      <span class="star">&#9733;</span>
 
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhqZRwt_FwYVP5agBShhqVJ7dgHY7WI-k"></script>
+  <script src="js/backbone.js"></script>
+  <script src="js/dishItemView.js"></script>
   <script src="js/app.js"></script>
 
 </body>

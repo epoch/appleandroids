@@ -1,0 +1,20 @@
+p {
+  font-size: 4em;
+}
+
+.home {
+  background-color: plum;
+}
+
+.about {
+  background-color: tomato;
+}
+
+.dish-item {
+  border: 2px solid red;
+}
+
+.dish-list {
+  border: 2px solid yellow;
+}
+

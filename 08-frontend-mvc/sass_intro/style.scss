@@ -1,0 +1,27 @@
+$primary-colour: tomato;
+$ravi-blue: hotpink;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;  
+}
+
+body {
+  background-color: $primary-colour;
+}
+
+.todo-item {
+
+  h2 {
+    background-color: lighten($ravi-blue, 20%);
+    @include border-radius(20px);
+  }
+
+  p {
+    background-color: plum;
+    @include border-radius(5px);
+  }
+
+}
